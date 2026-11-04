@@ -9,36 +9,38 @@ a:focus-visible{outline:2px solid var(--link);outline-offset:4px}
 .skip-link{position:fixed;left:16px;top:-60px;background:#fff;padding:10px;z-index:10}
 .skip-link:focus{top:12px}
 header{padding:26px 0 17px;border-bottom:1px solid var(--line)}
-nav{display:flex;gap:28px;flex-wrap:wrap;font:14px/1.6 Arial,sans-serif}
-main{padding-top:34px}
-section{margin:0 0 40px;scroll-margin-top:20px}
+nav{display:flex;gap:10px 28px;flex-wrap:wrap;font:14px/1.6 Arial,sans-serif}
+main{padding-top:24px}
+section{margin:0 0 28px;scroll-margin-top:20px}
 h1,h2,h3,p{margin-top:0}
 h1{font-size:37px;line-height:1.2;margin-bottom:14px;font-weight:normal}
-h2{font-size:25px;line-height:1.3;margin-bottom:17px;font-weight:normal;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h2{font-size:25px;line-height:1.3;margin-bottom:10px;font-weight:normal;padding-bottom:6px;border-bottom:1px solid var(--line)}
 p{margin-bottom:16px}
-.intro{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:48px;align-items:start;margin-bottom:42px}
+.intro{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:48px;align-items:start;margin-bottom:28px}
 .intro-copy{min-width:0}
 .affiliation{font-size:14px;color:var(--muted);line-height:1.55;margin-bottom:20px}
 .portrait{display:block;width:190px;height:auto;max-width:100%;margin-top:5px;border-radius:2px}
 .profile-links{font-size:14px;margin:22px 0 0}
 .profile-links span{margin:0 9px;color:#777}
 .papers{padding-left:25px;margin:0}
-.paper{padding-left:5px;margin-bottom:24px}
+.paper{padding-left:5px;margin-bottom:10px}
+.paper:last-child{margin-bottom:0}
 .paper::marker{font-size:14px;color:var(--muted)}
-.paper-title{font-size:14px;line-height:1.5;font-weight:normal;margin:0 0 3px}
-.paper-authors,.paper-venue{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 3px}
+.paper-title{font-size:14px;line-height:1.45;font-weight:normal;margin:0}
+.paper-authors,.paper-venue{font-size:14px;line-height:1.45;color:var(--muted);margin:0}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .teaching-table{border-collapse:collapse;text-align:left;width:100%;font-size:14px}
-.teaching-table th{font-weight:normal;color:var(--muted);padding:0 0 8px;border-bottom:1px solid #e5e5e5}
-.teaching-table td{padding:9px 0;border-bottom:1px solid #eee;vertical-align:top}
+.teaching-table th{font-weight:normal;color:var(--muted);padding:0 0 6px;border-bottom:1px solid #e5e5e5}
+.teaching-table td{padding:6px 0;border-bottom:1px solid #eee;vertical-align:top}
 .teaching-table td:first-child{width:170px;padding-right:20px;color:var(--muted)}
 .teaching-table tr:last-child td{border:0}
 .course-code{display:inline-block;min-width:75px;color:var(--ink)}
 .talks{padding-left:22px;margin:0;font-size:14px}
-.talks li{padding-left:3px;margin-bottom:12px}
+.talks li{padding-left:3px;margin-bottom:6px}
+.talks li:last-child{margin-bottom:0}
 .muted{color:var(--muted)}
 address{font-size:14px;font-style:normal;line-height:1.8}
 footer{border-top:1px solid var(--line);padding:18px 0 25px;font:12px/1.6 Arial,sans-serif;color:var(--muted);display:flex;justify-content:space-between;gap:20px}
-@media(max-width:680px){.page{padding-inline:22px}.intro{grid-template-columns:minmax(0,1fr) 145px;gap:27px}.portrait{width:145px}h1{font-size:33px}.intro-copy p{font-size:15px}.affiliation{font-size:13px!important}.profile-links span{margin:0 5px}nav{gap:24px}}
-@media(max-width:500px){body{font-size:16px}.page{padding-inline:20px}header{padding-top:20px}nav{font-size:13px;gap:23px}main{padding-top:26px}.intro{grid-template-columns:1fr;gap:24px;margin-bottom:32px}.intro-copy{display:contents}.intro h1{grid-row:1;margin:0}.portrait{grid-row:2;width:150px;margin:0}.intro .affiliation{grid-row:3;margin:0}.intro p{margin:0}.intro .profile-links{font-size:14px}h1{font-size:34px}h2{font-size:24px}.paper{padding-left:2px;margin-bottom:22px}.papers{padding-left:22px}.paper-title{font-size:13px}.paper-authors,.paper-venue{font-size:13px}.teaching-table{font-size:13px}.teaching-table td:first-child{width:112px;padding-right:13px;font-size:12px}.course-code{display:block;min-width:0;margin-bottom:2px}.talks{font-size:13px}section{margin-bottom:34px}footer{font-size:11px}}
+@media(max-width:680px){.page{padding-inline:22px}.intro{grid-template-columns:minmax(0,1fr) 145px;gap:27px}.portrait{width:145px}h1{font-size:33px}.intro-copy p{font-size:15px}.affiliation{font-size:13px!important}.profile-links span{margin:0 5px}nav{gap:8px 24px}}
+@media(max-width:500px){body{font-size:16px}.page{padding-inline:20px}header{padding-top:20px}nav{font-size:13px;gap:8px 23px}main{padding-top:20px}.intro{grid-template-columns:1fr;gap:18px;margin-bottom:24px}.intro-copy{display:contents}.intro h1{grid-row:1;margin:0}.portrait{grid-row:2;width:150px;margin:0}.intro .affiliation{grid-row:3;margin:0}.intro p{margin:0}.intro .profile-links{font-size:14px}h1{font-size:34px}h2{font-size:24px}.paper{padding-left:2px;margin-bottom:10px}.papers{padding-left:22px}.paper-title{font-size:13px}.paper-authors,.paper-venue{font-size:13px}.teaching-table{font-size:13px}.teaching-table td:first-child{width:112px;padding-right:13px;font-size:12px}.course-code{display:block;min-width:0;margin-bottom:2px}.talks{font-size:13px}section{margin-bottom:24px}footer{font-size:11px}}
 @media print{.page{max-width:none;padding:0}body{font-size:11pt}header,footer,.skip-link{display:none}.intro{grid-template-columns:minmax(0,1fr) 120px;gap:25px}.portrait{width:120px}h1{font-size:25pt}h2{font-size:18pt}.paper,.talks li{break-inside:avoid}.paper-title{font-size:12pt}.paper-authors,.paper-venue,.teaching-table,.talks,address{font-size:10pt}a{color:black}.intro-copy{display:block}.intro p{margin-bottom:12px}}
