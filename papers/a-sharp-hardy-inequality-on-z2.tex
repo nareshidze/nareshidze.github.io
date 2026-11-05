@@ -1,0 +1,407 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\hypersetup{
+  pdftitle={A sharp Hardy inequality on Z2},
+  pdfsubject={Sharp logarithmic Hardy inequality and positive remainder},
+  pdfauthor={Nika Areshidze}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\numberwithin{equation}{section}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathcal E}
+\newcommand{\V}{\mathcal V}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Cc}{C_c}
+\allowdisplaybreaks[1]
+\title[A sharp Hardy inequality on $\Z^2$]{A sharp Hardy inequality on $\Z^2$}
+\author[N. Areshidze]{Nika Areshidze}
+\address{Department of Mathematics, University of California, Irvine, CA 92697, USA}
+\email{nareshid@uci.edu}
+\keywords{Discrete Hardy inequality, square lattice, sharp constant,
+supersolution, logarithmic weight}
+\date{}
+
+\begin{document}
+\begin{abstract}
+We prove the Hardy inequality on $\Z^2$ with Euclidean weight
+$|x|^{-2}(\log|x|)^{-2}$ and sharp constant $1/4$, for finitely supported
+functions vanishing on $\{|x|\le1\}$.
+\end{abstract}
+\maketitle
+\vspace{-18pt}
+
+\section{Introduction}
+
+We determine the sharp coefficient of the Euclidean logarithmic Hardy
+weight for the nearest-neighbor Laplacian on the square lattice.
+Throughout, $|x|$ denotes the Euclidean norm and $\log$ the natural
+logarithm. Let $e_1=(1,0)$, $e_2=(0,1)$, and set
+\[
+K=\{x\in\Z^2:|x|\le1\}=\{0,\pm e_1,\pm e_2\},
+\qquad D=\Z^2\setminus K.
+\]
+We identify $\Cc(D)$ with the real-valued finitely supported functions
+on $\Z^2$ that vanish on $K$. Their Dirichlet energy is
+\begin{equation}\label{eq:energy}
+\E(u)=\sum_{x\in\Z^2}\sum_{j=1}^2|u(x+e_j)-u(x)|^2,
+\end{equation}
+so that each unoriented edge is counted once.
+
+\begin{theorem}\label{thm:main}
+Every $u\in\Cc(D)$ satisfies
+\begin{equation}\label{eq:main}
+\sum_{x\in\Z^2}\sum_{j=1}^2|u(x+e_j)-u(x)|^2
+\ge\frac14\sum_{x\in D}\frac{|u(x)|^2}{|x|^2(\log|x|)^2}.
+\end{equation}
+The constant $1/4$ is sharp, and the inequality is strict for every
+nonzero $u\in\Cc(D)$.
+\end{theorem}
+
+Kapitanski and Laptev \cite[Theorem 4.1]{KL} established a logarithmic
+Hardy inequality on $\Z^2$ with an unspecified positive coefficient.
+Their theorem uses the same Dirichlet set $K$, with the Euclidean weighted
+sum restricted to $|x|\ge2$. Inequality \eqref{eq:main} also includes
+the four points $(\pm1,\pm1)$.
+
+Huang and Ye \cite[Remark 6.2]{HY} obtained a logarithmic Hardy weight
+on $\Z^2$ with leading coefficient $1/4$, for functions supported on
+$\{|x|\ge2\}$. Its next term is negative along diagonal directions,
+so their expansion does not establish \eqref{eq:main} with the
+prescribed weight.
+
+Hake, Keller and Pogorzelski \cite[Corollary 2 and the subsequent
+remark]{HKP} constructed an optimal Hardy weight from the lattice
+potential kernel. Its leading term is
+$1/[4|x|^2(\log|x|)^2]$, followed by a negative correction of order
+$|x|^{-2}(\log|x|)^{-3}$. They proved sharpness of the leading coefficient
+near infinity and discussed whether $1/4$ remains valid globally for the
+prescribed logarithmic weight. Theorem~\ref{thm:main} establishes this
+endpoint for $K$. Their criticality result concerns the different class
+of functions vanishing only at the origin.
+
+The proof uses the ground-state identity
+\cite{KPP}. We start from the radial function
+$\sqrt{\frac12\log(|x|^2-\frac12)}$.
+An angular comparison bounds its four-neighbor sum by the corresponding
+sum in a diagonal direction, where an exact factorization gives the
+required estimate. Changing the values on the two orbits $|x|^2=2,4$
+then produces a global supersolution. The construction yields a positive
+remainder, while logarithmic cutoffs prove sharpness.
+
+A direct consequence is the following family of inequalities.
+
+\begin{corollary}\label{cor:shift}
+For each $b\ge1$, every $u\in\Cc(D)$ satisfies the sharp inequality
+\begin{equation}\label{eq:shift}
+\E(u)\ge\frac14\sum_{x\in D}
+\frac{|u(x)|^2}{|x|^2\log^2(b|x|)}.
+\end{equation}
+\end{corollary}
+
+The inequality follows from \eqref{eq:main} because
+$\log(b|x|)\ge\log|x|$ on $D$; sharpness is proved in
+Section~\ref{sec:sharpness}. The inequalities and their sharp constants
+also hold for complex-valued functions, by applying the inequalities
+to the real and imaginary parts.
+
+\section{The supersolution}\label{sec:super}
+
+Write $x\sim y$ when $|x-y|=1$, and define
+\[
+L\phi(x)=4\phi(x)-\sum_{y\sim x}\phi(y),
+\qquad
+W(x)=\frac1{4|x|^2(\log|x|)^2}\quad(x\in D).
+\]
+Thus $\E(u)=\sum_xu(x)Lu(x)$. Our goal is to construct $\phi>0$ on
+$D$, with $\phi=0$ on $K$, such that $L\phi>W\phi$ on $D$.
+The following identity explains this reduction.
+
+\begin{lemma}\label{lem:ground}
+If $\phi>0$ on $D$ and $\phi=0$ on $K$, then for every $u\in\Cc(D)$,
+\begin{equation}\label{eq:ground}
+\E(u)=
+\sum_{\substack{\{x,y\}:x\sim y\\x,y\in D}}
+\phi(x)\phi(y)
+\left(\frac{u(x)}{\phi(x)}-\frac{u(y)}{\phi(y)}\right)^2
++\sum_{x\in D}\frac{L\phi(x)}{\phi(x)}u(x)^2.
+\end{equation}
+Each edge in the first sum is counted once.
+\end{lemma}
+
+\begin{proof}
+For $x,y\in D$, expansion gives
+\begin{align*}
+(u(x)-u(y))^2
+&=\phi(x)\phi(y)
+\left(\frac{u(x)}{\phi(x)}-\frac{u(y)}{\phi(y)}\right)^2\\
+&\quad+\frac{\phi(x)-\phi(y)}{\phi(x)}u(x)^2
++\frac{\phi(y)-\phi(x)}{\phi(y)}u(y)^2.
+\end{align*}
+Sum over the edges in $D$. An edge from $x\in D$ to $K$ contributes
+$u(x)^2$ to the energy and the same amount to the potential term,
+since $u=\phi=0$ on $K$. This proves \eqref{eq:ground}.
+\end{proof}
+
+\begin{lemma}\label{lem:angular}
+Let $q>0$, and suppose that $F\in C^4$ on an open interval containing
+$[q+1-2\sqrt q,q+1+2\sqrt q]$, with $F^{(4)}\le0$ there.
+If $x_1^2+x_2^2=q$, then
+\begin{align}
+&\sum_{j=1}^2\bigl(F(q+1+2x_j)+F(q+1-2x_j)\bigr)\notag\\
+&\hspace{15mm}\le
+2F(q+1+\sqrt{2q})+2F(q+1-\sqrt{2q}).\label{eq:angular}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Put $a=q+1$ and
+$G(s)=F(a+2\sqrt s)+F(a-2\sqrt s)$ for $0\le s\le q$.
+For $s>0$, with $t=2\sqrt s$, differentiation gives
+\[
+G''(s)=\frac4{t^3}
+\left[
+t\bigl(F''(a+t)+F''(a-t)\bigr)
+-\int_{a-t}^{a+t}F''(v)\,dv
+\right]\le0.
+\]
+Indeed, $F''$ is concave and therefore lies above the chord joining
+its endpoint values. By continuity, $G$ is concave on $[0,q]$.
+Jensen's inequality now gives
+$G(x_1^2)+G(x_2^2)\le2G(q/2)$, which is \eqref{eq:angular}.
+\end{proof}
+
+We use the function
+\[
+F(v)=\sqrt{\frac12\log\left(v-\frac12\right)}\qquad(v>3/2)
+\]
+and define
+\begin{equation}\label{eq:phi}
+\phi(x)=
+\begin{cases}
+0,&|x|^2\le1,\\[1mm]
+\dfrac35,&|x|^2=2,\\[2mm]
+\dfrac{18}{25},&|x|^2=4,\\[2mm]
+F(|x|^2),&|x|^2\ge5.
+\end{cases}
+\end{equation}
+These cases exhaust $\Z^2$, and $\phi>0$ on $D$.
+
+\begin{proposition}\label{prop:super}
+The function \eqref{eq:phi} satisfies $(L-W)\phi>0$ on $D$.
+More precisely, for $q=|x|^2\ge8$,
+\begin{equation}\label{eq:globalradial}
+\frac{L\phi(x)}{\phi(x)}\ge\frac1{q\log^2(q-\frac12)}>W(x),
+\end{equation}
+and for $1<|x|^2<8$, we have $(L-W)\phi(x)>1/1250$.
+\end{proposition}
+
+\begin{proof}
+Suppose first that $q\ge8$. Then $\phi(x)=F(q)$ and
+$\phi(y)\le F(|y|^2)$ for every neighbor $y$ of $x$.
+Indeed, a neighbor can meet a modified orbit only when $q=9$ and
+$|y|^2=4$, and $18/25<F(4)$, as verified below.
+Writing $t=\log(v-\frac12)>0$, we have
+\[
+F^{(4)}(v)=
+-\frac{48t^3+44t^2+36t+15}
+{16\sqrt2\,(v-\frac12)^4t^{7/2}}<0.
+\]
+Since $(\sqrt q-1)^2\ge(\sqrt8-1)^2>3/2$,
+Lemma~\ref{lem:angular} applies to the four neighboring values.
+Set
+\[
+h=\log\left(q-\frac12\right),\qquad
+d=\log\frac{\sqrt{2q}+1}{\sqrt{2q}-1}.
+\]
+The factorization
+$q+\frac12\pm\sqrt{2q}=\frac12(\sqrt{2q}\pm1)^2$
+gives
+\[
+\log\left(q+\frac12\pm\sqrt{2q}\right)=h\pm d,
+\qquad 0<d<h.
+\]
+The elementary inequalities
+\[
+\sqrt{1+z}+\sqrt{1-z}\le2-\frac{z^2}{4},
+\qquad
+\log\frac{1+z}{1-z}\ge2z
+\qquad(0\le z<1)
+\]
+follow, respectively, by squaring and by integrating
+$2/(1-z^2)\ge2$. In particular, $d\ge\sqrt{2/q}$.
+The angular comparison therefore gives
+\begin{align*}
+\frac{L\phi(x)}{\phi(x)}
+&\ge4-2\sqrt{1+d/h}-2\sqrt{1-d/h}\\
+&\ge\frac{d^2}{2h^2}
+\ge\frac1{qh^2}>\frac1{q(\log q)^2}=W(x).
+\end{align*}
+This proves \eqref{eq:globalradial}.
+
+It remains to check $q=2,4,5$. Write $W_q=1/[q(\log q)^2]$.
+We use the rational bounds
+\begin{gather}
+\frac{18}{25}<F(4),\qquad
+\frac{173}{200}<F(5)<\frac{87}{100},\notag\\
+F(8)<\frac{201}{200},\qquad F(9)<\frac{26}{25},\qquad
+F(10)<\frac{213}{200},\label{eq:boundsF}\\
+W_2<\frac{21}{20},\qquad W_4<\frac2{15},\qquad
+W_5<\frac2{25}.\label{eq:boundsW}
+\end{gather}
+All these bounds follow by substitution in the elementary enclosure
+\begin{equation}\label{eq:logcertificate}
+0<\log t-2\sum_{k=0}^{4}\frac{z^{2k+1}}{2k+1}
+<\frac{2z^{11}}{11(1-z^2)},
+\qquad z=\frac{t-1}{t+1},\quad t>1.
+\end{equation}
+To obtain it, expand $\log t=2\sum_{k\ge0}z^{2k+1}/(2k+1)$
+and bound the tail by a geometric series.
+Substituting \eqref{eq:boundsF}--\eqref{eq:boundsW} into the
+three neighbor sums gives
+\begin{align}
+(L-W)\phi(1,1)
+&=(4-W_2)\frac35-2F(5)>\frac3{100},\notag\\
+(L-W)\phi(2,0)
+&=(4-W_4)\frac{18}{25}-F(9)-2F(5)>\frac1{250},\label{eq:local}\\
+(L-W)\phi(2,1)
+&=(4-W_5)F(5)-\frac35-\frac{18}{25}-F(8)-F(10)
+>\frac1{1250}.\notag
+\end{align}
+Sign changes and coordinate permutations cover all remaining points.
+\end{proof}
+
+\begin{proof}[Proof of the lower bound in Theorem~\ref{thm:main}]
+Apply \eqref{eq:ground} to the function \eqref{eq:phi}.
+The first term is nonnegative, and Proposition~\ref{prop:super}
+gives $L\phi/\phi>W$ at every point of $D$. Hence
+$\E(u)\ge\sum_D W(x)u(x)^2$, with strict inequality for $u\ne0$.
+\end{proof}
+
+The same estimates give an explicit remainder.
+
+\begin{corollary}\label{cor:remainder}
+For $x\in D$, put $q=|x|^2$ and
+\[
+R(x)=
+\begin{cases}
+\dfrac1{1250},&1<q<8,\\[2mm]
+\displaystyle\frac1{q\log^2(q-\frac12)}
+-\frac1{q(\log q)^2},&q\ge8.
+\end{cases}
+\]
+Then $R(x)>0$ on $D$, and every $u\in\Cc(D)$ satisfies
+\begin{equation}\label{eq:remainder}
+\E(u)\ge
+\frac14\sum_{x\in D}\frac{|u(x)|^2}{|x|^2(\log|x|)^2}
++\sum_{x\in D}R(x)|u(x)|^2.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For $1<q<8$, we have $\phi(x)<1$, so \eqref{eq:local} gives
+$(L-W)\phi(x)/\phi(x)>1/1250$. For $q\ge8$, use
+\eqref{eq:globalradial}. The conclusion follows from \eqref{eq:ground}.
+\end{proof}
+
+The coefficient $1/4$ is therefore sharp within the family of constant
+multiples of the prescribed weight, although the weight admits a positive
+additive improvement. No optimality is asserted for the remainder $R$.
+
+\section{Sharpness}\label{sec:sharpness}
+
+Choose $\chi\in C^\infty([0,\infty))$ with $0\le\chi\le1$,
+$\chi=1$ on $[0,1]$, and $\chi=0$ on $[2,\infty)$.
+For $T\ge2$, put
+\[
+u_T(x)=
+\begin{cases}
+\sqrt{\log|x|}\,\chi\bigl(T^{-1}\log|x|\bigr),&x\in D,\\
+0,&x\in K.
+\end{cases}
+\]
+These functions are finitely supported. Write
+\[
+\V_b(u)=\sum_{x\in D}
+\frac{|u(x)|^2}{|x|^2\log^2(b|x|)}
+\quad(b\ge1),\qquad \V=\V_1.
+\]
+
+Let $U_T(z)=\sqrt{\log|z|}\,\chi(T^{-1}\log|z|)$ for $|z|>1$.
+On $r=|z|\ge2$, differentiation gives, uniformly in $T$,
+\[
+|\nabla U_T(z)|\le Cr^{-1},\qquad
+|\nabla^2U_T(z)|\le Cr^{-2}.
+\]
+The gradients of $|\nabla U_T|^2$ and $U_T^2/(r^2\log^2r)$
+are consequently bounded by $Cr^{-3}$.
+Taylor's theorem and comparison on unit squares therefore give
+uniformly bounded errors when replacing lattice sums by integrals
+outside a fixed ball, since $\sum_{|x|\ge3}|x|^{-3}<\infty$.
+The finitely many remaining lattice terms are also uniformly bounded.
+
+With $t=\log r$, it follows that
+\begin{align*}
+\V(u_T)
+&=2\pi\int_{\log2}^{\infty}
+\frac{\chi(t/T)^2}{t}\,dt+O(1)
+=2\pi\log T+O(1),\\
+\E(u_T)
+&=2\pi\int_{\log2}^{\infty}
+\left(
+\frac{\chi(t/T)}{2\sqrt t}
++\frac{\sqrt t}{T}\chi'(t/T)
+\right)^2dt+O(1)\\
+&=\frac\pi2\log T+O(1).
+\end{align*}
+Indeed, $\chi'=0$ unless $T\le t\le2T$, so the terms containing
+$\chi'$ contribute $O(1)$. Hence
+$\E(u_T)/\V(u_T)\to1/4$, proving sharpness in
+Theorem~\ref{thm:main}.
+
+For fixed $b\ge1$, the bound $u_T(x)^2\le\log|x|$ gives
+\[
+0\le\V(u_T)-\V_b(u_T)
+\le2(\log b)\sum_{x\in D}
+\frac1{|x|^2(\log|x|)^2}=O_b(1).
+\]
+The series converges, so $\E(u_T)/\V_b(u_T)\to1/4$,
+proving Corollary~\ref{cor:shift}.
+Removing any fixed finite set from the weighted sums changes them
+by $O(1)$; the coefficient remains sharp after such a removal.
+
+\begin{thebibliography}{9}
+
+\bibitem{HKP}
+P. Hake, M. Keller and F. Pogorzelski,
+\emph{Optimal Hardy inequalities for random walks on $\Z^2$},
+arXiv:2608.24213v1, 25 August 2026.
+\url{https://arxiv.org/abs/2608.24213v1}.
+
+\bibitem{HY}
+X. Huang and D. Ye,
+\emph{One-dimensional sharp discrete Hardy--Rellich inequalities},
+J. Lond. Math. Soc. (2) \textbf{109} (2024), no.~1, e12838.
+\url{https://doi.org/10.1112/jlms.12838}.
+
+\bibitem{KL}
+L. Kapitanski and A. Laptev,
+\emph{On continuous and discrete Hardy inequalities},
+J. Spectr. Theory \textbf{6} (2016), no.~4, 837--858.
+\url{https://doi.org/10.4171/JST/144}.
+
+\bibitem{KPP}
+M. Keller, Y. Pinchover and F. Pogorzelski,
+\emph{Optimal Hardy inequalities for Schr\"odinger operators on graphs},
+Comm. Math. Phys. \textbf{358} (2018), no.~2, 767--790.
+\url{https://doi.org/10.1007/s00220-018-3107-y}.
+
+\end{thebibliography}
+\end{document}
