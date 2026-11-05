@@ -2,7 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype,etoolbox}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
 \hypersetup{
   pdftitle={A sharp Hardy inequality on Z2},
@@ -29,6 +29,18 @@
 supersolution, logarithmic weight}
 \date{November 4, 2026}
 
+% Display the date below the author name.
+\makeatletter
+\patchcmd{\@adminfootnotes}
+  {\ifx\@empty\@date\else \@footnotetext{\@setdate}\fi}
+  {}{}{\errmessage{Unable to relocate the date}}
+\patchcmd{\@setauthors}
+  {\MakeUppercase{\authors}}
+  {\MakeUppercase{\authors}\par\nobreak\vspace{6pt}%
+   {\normalfont\normalsize\@date\par}}
+  {}{\errmessage{Unable to display the date below the author}}
+\makeatother
+
 \begin{document}
 \begin{abstract}
 We prove the Hardy inequality on $\Z^2$ with Euclidean weight
@@ -40,8 +52,18 @@ functions vanishing on $\{|x|\le1\}$.
 
 \section{Introduction}
 
-We determine the sharp coefficient of the Euclidean logarithmic Hardy
-weight for the nearest-neighbor Laplacian on the square lattice.
+On the exterior domain $\Omega=\{x\in\R^2:|x|>1\}$, the classical
+logarithmic Hardy inequality
+\[
+\int_{\Omega}|\nabla u(x)|^2\,dx
+\ge\frac14\int_{\Omega}
+\frac{|u(x)|^2}{|x|^2(\log|x|)^2}\,dx
+\]
+holds for every $u\in C_c^\infty(\Omega)$. The constant $1/4$ is sharp.
+We establish the corresponding inequality for the nearest-neighbor
+Laplacian on $\Z^2$, with the same Euclidean weight and the same sharp
+constant, for finitely supported functions vanishing on $\{|x|\le1\}$.
+
 Throughout, $|x|$ denotes the Euclidean norm and $\log$ the natural
 logarithm. Let $e_1=(1,0)$, $e_2=(0,1)$, and set
 \[
