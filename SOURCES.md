@@ -29,6 +29,10 @@ ResearchGate profile: <https://www.researchgate.net/profile/Nika-Areshidze>, che
 10. Approximation by Nörlund Means with Respect to Walsh System in Lebesgue Spaces: <https://mia.ele-math.com/27-10/Approximation-by-Norlund-means-with-respect-to-Walsh-system-in-Lebesgue-spaces>
 11. Approximation by T Means of Walsh–Fourier Series in Lebesgue Spaces and Lipschitz Classes: <https://ac.inf.elte.hu/Vol_056_2024/V_56_index.html> and <https://ac.inf.elte.hu/Vol_056_2024/053_56.pdf>
 
+## Ongoing work
+
+- Nika Areshidze, *A sharp Hardy inequality on ℤ²*. Author-provided five-page draft, added November 5, 2026. The PDF is stored at `papers/a-sharp-hardy-inequality-on-z2.pdf` and linked from its title in the **Ongoing work** section.
+
 ## Bibliographic decisions
 
 - The first four entries are preprints and are not labeled as journal publications.

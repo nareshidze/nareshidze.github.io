@@ -6,7 +6,8 @@ A simple academic website for Nika Areshidze, Ph.D. student in Mathematics at th
 
 ## Website files
 
-- `index.html`: biography, papers, teaching, talks, and contact information
+- `index.html`: biography, papers, ongoing work, teaching, talks, and contact information
+- `papers/`: PDFs of research drafts linked from the website
 - `assets/style.css`: layout and typography
 - `assets/nika-areshidze.jpg`: original portrait from the Google homepage
 - `assets/favicon.svg`: browser icon
@@ -24,6 +25,8 @@ No build command, package installation, or custom workflow is needed. The websit
 Edit `index.html` to update the text and links. Each paper has one clickable title, followed by its coauthors and venue or preprint status. The profile links are Google Scholar, arXiv, and ResearchGate.
 
 To add a paper, copy an existing `li.paper` entry, use a unique ID, and update the title link, coauthors, year, and venue. To update the portrait, replace `assets/nika-areshidze.jpg` and keep its image dimensions in `index.html` accurate.
+
+Research drafts appear under **Ongoing work**, with a clickable title and a dated draft status. The Hardy draft was added on November 5, 2026.
 
 All asset paths are relative. The layout works on desktop and mobile, with semantic headings, a skip link, keyboard focus styles, and print styling.
 
