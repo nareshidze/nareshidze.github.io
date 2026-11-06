@@ -18,7 +18,9 @@ A simple academic website for Nika Areshidze, Ph.D. student in Mathematics at th
 
 GitHub Pages publishes this repository from the `main` branch and the `/(root)` folder. In **Settings → Pages**, the source is **Deploy from a branch**. Updates committed to `main` publish automatically.
 
-No build command, package installation, or custom workflow is needed. The website uses plain HTML and CSS, with no application JavaScript, external font service, analytics, or database.
+No build command, package installation, or custom workflow is needed. The website uses plain HTML and CSS, with Google Analytics for visitor statistics and no application framework, external font service, or database.
+
+Google Analytics is configured in `index.html` for the property **Nika Areshidze — GitHub Website**, using measurement ID `G-RR68PCXXZG`. The Google-provided tag is installed once, immediately after `<head>`, with enhanced measurement enabled for page views and visitor interactions.
 
 ## Editing
 
